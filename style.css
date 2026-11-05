@@ -1,6 +1,5 @@
 /* Variabler */
 html {
-  --color-page: linear-gradient(to bottom, rgb(255, 150, 21) 0.5%, #040032) 99%;
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #666;
@@ -21,6 +20,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
+  background: linear-gradient(to bottom, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
 }
 
 h1,
@@ -28,6 +28,10 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+h1 {
+  color: white;
 }
 
 main {
@@ -163,6 +167,7 @@ main > * {
 
 .site-nav button {
   padding: 0.4rem 0.7rem;
+  border-radius: 10px;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   @media (width > 600px) {
@@ -171,11 +176,13 @@ main > * {
 }
 
 .menu {
+  position-area: bottom span-left;
+  border-radius: 10px;
   margin: 0;
   padding: var(--space-1);
   list-style: none;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1px solid var (--color-border);
   @media (width > 600px) {
     display: flex;
     gap: var(--space-1);
@@ -188,10 +195,14 @@ main > * {
 
 .menu a {
   display: block;
-  padding: 0.4rem 0;
+  padding: 10px;
   color: inherit;
   text-decoration: none;
   border-bottom: 2px solid #0000;
+  &:hover {
+    background-color: grey;
+  }
+  border-radius: 10px;
 }
 
 .menu a[aria-current="page"] {
@@ -293,4 +304,79 @@ main > * {
   .section-container {
     flex-direction: column;
   }
+}
+
+/* Selve popup-vinduet */
+#popup-om-os,
+#popup-program,
+#popup-tilmelding {
+  width: 300px;
+  max-width: 80%;
+  padding: 30px;
+
+  background-color: white;
+  color: #333;
+
+  border: none;
+  border-radius: 15px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+
+  /* Placer popup i midten */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+/* Overskriften i popup-vinduet */
+#popup-om-os h2,
+#popup-program h2,
+#popup-tilmelding h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Teksten i popup-vinduet */
+#popup-om-os p,
+#popup-program p,
+#popup-tilmelding p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Baggrunden bag popup-vinduet */
+#popup-om-os::backdrop,
+#popup-program::backdrop,
+#popup-tilmelding::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Knappen, der åbner popup-vinduet */
+.popup button {
+  background-color: #444;
+  color: white;
+
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* Hover-effekt på knappen */
+.popup button:hover {
+  background-color: #ff8437;
+}
+
+.site-logo img {
+  width: 85px;
+  height: auto;
+  display: block;
+  padding: 2px;
 }

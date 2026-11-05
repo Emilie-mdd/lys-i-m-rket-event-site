@@ -11,9 +11,11 @@
   <body>
     <header class="site-header">
       <div class="header-content">
-        <a class="site-logo" href="./">Lys i mørket</a>
+        <a class="site-logo" href="./">
+          <img src="../pics/logo-noback.png" alt="Lys i mørket" />
+        </a>
         <nav class="site-nav">
-          <button>Menu</button>
+          <button popovertarget="menu" type="button">Menu</button>
           <ul class="menu" id="menu" popover>
             <li><a href="./" aria-current="page">Forside</a></li>
             <li><a href="./svg.html">Interaktiv SVG</a></li>
@@ -28,14 +30,38 @@
       <div class="section-container">
         <section class="info-box">
           <h2>Om os</h2>
+          <p>Information om vores organisation og mission.</p>
+          <section class="popup">
+            <button popovertarget="popup-om-os">Klik her</button>
+            <div id="popup-om-os" popover>
+              <h2>Om os</h2>
+              <p>lalalala</p>
+            </div>
+          </section>
         </section>
 
         <section class="info-box">
           <h2>Program</h2>
+          <p>Se vores kommende events og aktiviteter.</p>
+          <section class="popup">
+            <button popovertarget="popup-program">Klik her</button>
+            <div id="popup-program" popover>
+              <h2>program</h2>
+              <p>lalalala</p>
+            </div>
+          </section>
         </section>
 
         <section class="info-box">
           <h2>Tilmelding</h2>
+          <p>Udfyld vores formular for at tilmelde dig.</p>
+          <section class="popup">
+            <button popovertarget="popup-tilmelding">Klik her</button>
+            <div id="popup-tilmelding" popover>
+              <h2>Tilmelding</h2>
+              <p>lalalala</p>
+            </div>
+          </section>
         </section>
       </div>
     </main>
