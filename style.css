@@ -20,14 +20,14 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
-  background: linear-gradient(to bottom, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
+  background: linear-gradient(to left, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
 }
 
 h1,
 h2,
 h3,
 p {
-  margin: 0;
+  margin: 0.5rem;
 }
 
 h1 {
@@ -43,7 +43,7 @@ main {
 
 main > * {
   grid-column: 2;
-  padding-block: var(--space-3);
+  padding-block: var(--space-1);
 }
 
 .svg-page {
@@ -126,9 +126,18 @@ main > * {
 
   display: grid;
   grid-template-columns: inherit;
-  background: var(--color-surface);
 }
 
+/* Header */
+.site-header {
+  background: #ff7f3551;
+}
+
+/* Footer */
+.site-footer {
+  background: #25264a98;
+  color: white;
+}
 .header-content,
 .footer-content {
   grid-column: 2;
@@ -154,7 +163,6 @@ main > * {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-1);
-  color: var(--color-muted);
 }
 
 /* Navigation */
@@ -195,12 +203,14 @@ main > * {
 
 .menu a {
   display: block;
-  padding: 10px;
-  color: inherit;
+  padding: 0.5rem 0.8rem;
+  color: white;
   text-decoration: none;
   border-bottom: 2px solid #0000;
   &:hover {
-    background-color: grey;
+    background-color: rgb(207, 117, 79);
+    color: black;
+    transition: 0.5s;
   }
   border-radius: 10px;
 }
@@ -371,7 +381,7 @@ main > * {
 
 /* Hover-effekt på knappen */
 .popup button:hover {
-  background-color: #ff8437;
+  background-color: #c5662b;
 }
 
 .site-logo img {
@@ -379,4 +389,17 @@ main > * {
   height: auto;
   display: block;
   padding: 2px;
+}
+
+.lys-fam {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  scale: 0.6;
+  margin: 0;
+}
+main > .lys-fam {
+  padding-block: 0;
+  margin-top: -180px;
+  margin-bottom: -100px;
 }
