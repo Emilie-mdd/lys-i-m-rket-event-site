@@ -23,6 +23,19 @@ body {
   background: linear-gradient(to left, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
 }
 
+/* Skrifttyper */
+h1 {
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -184,7 +197,7 @@ main > * {
 
 .site-logo {
   color: inherit;
-  font-weight: 700;
+  scale: 0.8;
   text-decoration: none;
 }
 
@@ -344,7 +357,7 @@ main > * {
 .info-box h2 {
   font-size: 24px;
   color: #17283c;
-  font-family: Georgia;
+  font-family: "Lato", sans-serif;
   text-align: center;
 }
 
