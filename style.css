@@ -43,7 +43,7 @@ main {
 
 main > * {
   grid-column: 2;
-  padding-block: var(--space-1);
+  padding-block: var(--space-3);
 }
 
 .svg-page {
@@ -176,8 +176,12 @@ main > * {
 .site-nav button {
   padding: 0.4rem 0.7rem;
   border-radius: 10px;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  background-color: #341e6cb3;
+  color: white;
+  &:hover {
+    background-color: rgb(207, 117, 79);
+    transition: 0.5s;
+  }
   @media (width > 600px) {
     display: none;
   }
@@ -189,7 +193,7 @@ main > * {
   margin: 0;
   padding: var(--space-1);
   list-style: none;
-  background: var(--color-surface);
+  background: #341e6cea;
   border: 1px solid var (--color-border);
   @media (width > 600px) {
     display: flex;
@@ -284,7 +288,7 @@ main > * {
 
 .info-box {
   min-height: 200px;
-  background-color: white;
+  background-color: rgba(237, 164, 81, 0.541);
   border-radius: 18px;
   padding: 30px;
   display: flex;
@@ -299,7 +303,7 @@ main > * {
 
 .info-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.39);
 }
 
 .info-box h2 {
@@ -334,12 +338,36 @@ main > * {
 
   text-align: center;
 
-  /* Placer popup i midten */
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   margin: 0;
+
+  opacity: 1;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    overlay 0.4s allow-discrete,
+    display 0.4s allow-discrete;
+}
+
+/* Animation når popup åbner */
+@starting-style {
+  #popup-om-os:popover-open,
+  #popup-program:popover-open,
+  #popup-tilmelding:popover-open {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+
+/* Animation når popup lukker */
+#popup-om-os:not(:popover-open),
+#popup-program:not(:popover-open),
+#popup-tilmelding:not(:popover-open) {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
 }
 
 /* Overskriften i popup-vinduet */
@@ -367,7 +395,7 @@ main > * {
 
 /* Knappen, der åbner popup-vinduet */
 .popup button {
-  background-color: #444;
+  background-color: #341e6cb3;
   color: white;
 
   padding: 12px 24px;

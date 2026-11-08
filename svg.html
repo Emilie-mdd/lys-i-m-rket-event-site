@@ -1,68 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interaktiv SVG | Eventnavn</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interaktiv SVG | Eventnavn</title>
-  <link rel="stylesheet" href="./starter.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="site-logo" href="./">
+          <img src="../pics/logo-noback.png" alt="Lys i mørket" />
+        </a>
+        <nav class="site-nav">
+          <button popovertarget="menu" type="button">Menu</button>
+          <ul class="menu" id="menu" popover>
+            <li><a href="./" aria-current="page">Forside</a></li>
+            <li><a href="./svg.html">Interaktiv SVG</a></li>
+            <li><a href="./form.html">Formular</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <header class="site-header">
-    <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
-      <nav class="site-nav">
-        <button>Menu</button>
-        <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html" aria-current="page">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+      <section class="svg-page">
+        <header class="svg-intro">
+          <h1>Interaktiv SVG</h1>
+          <p>Indsæt din egen SVG og forbind den med punkterne nedenfor.</p>
+        </header>
 
-  <main>
-    <section class="svg-page">
-      <header class="svg-intro">
-        <h1>Interaktiv SVG</h1>
-        <p>Indsæt din egen SVG og forbind den med punkterne nedenfor.</p>
-      </header>
+        <section class="svg-layout">
+          <div class="svg-placeholder"></div>
 
-      <section class="svg-layout">
-        <div class="svg-placeholder"></div>
-
-        <article class="panel">
-          <h2>Udforsk eventet</h2>
-          <div class="accordion">
-            <!-- TODO: Lav om til details/summary -->
-            <div class="accordion-item">
-              <h3>Punkt 1</h3>
-              <p>Beskriv første område, aktivitet eller del af dit event.</p>
+          <article class="panel">
+            <h2>Udforsk eventet</h2>
+            <div class="accordion">
+              <!-- TODO: Lav om til details/summary -->
+              <div class="accordion-item">
+                <h3>Start</h3>
+                <p>Eventet starter kl. 18:00, på rådhuset hvor vi tænder stjernekastere og går en tur hen til næste stop.</p>
+              </div>
+              <div class="accordion-item">
+                <h3>Midt i eventet</h3>
+                <p>kl 19:00 mødes vi til en fest med musik og mad.</p>
+              </div>
+              <div class="accordion-item">
+                <h3>Slut</h3>
+                <p>Eventet slutter kl. 22:00, hvor vi sætter lanterner ud i vandet med musik.</p>
+              </div>
             </div>
-            <div class="accordion-item">
-              <h3>Punkt 2</h3>
-              <p>Beskriv andet område, aktivitet eller del af dit event.</p>
-            </div>
-            <div class="accordion-item">
-              <h3>Punkt 3</h3>
-              <p>Beskriv tredje område, aktivitet eller del af dit event.</p>
-            </div>
-          </div>
-        </article>
+          </article>
+        </section>
       </section>
-    </section>
-  </main>
+    </main>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
-    </div>
-  </footer>
-  <script src="./script.js"></script>
-</body>
-
+    <footer class="site-footer">
+      <div class="footer-content">
+        <a class="site-logo" href="./"><img src="../pics/logo-noback.png" alt="logo" /></a>
+        <p>Lys i mørket</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
