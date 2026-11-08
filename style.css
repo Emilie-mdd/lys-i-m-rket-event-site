@@ -28,6 +28,7 @@ h2,
 h3,
 p {
   margin: 0.5rem;
+  color: black;
 }
 
 h1 {
@@ -92,6 +93,12 @@ main > * {
 /* Hover-effekt */
 .illustration:hover {
   transform: scale(1.15);
+}
+.mørk-fam2 {
+  &:hover {
+    transform: scale(1.15);
+    content: url("../svg's/lys fam2.svg");
+  }
 }
 
 .form-page {
@@ -252,8 +259,9 @@ main > * {
 .svg-placeholder,
 .form-placeholder,
 .opsamling-placeholder {
-  background: var(--color-surface);
+  background: rgba(255, 197, 132, 0.479);
   border: 1px solid var(--color-border);
+  border-radius: 18px;
 }
 
 .panel {
@@ -281,13 +289,17 @@ main > * {
 }
 
 .accordion-item {
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  background: rgba(237, 164, 81, 0.24);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .accordion-item p {
   padding: 0 var(--space-1) var(--space-1);
-  color: var(--color-muted);
+  color: black;
 }
 
 /* Knap/link */
@@ -443,7 +455,7 @@ main > * {
   padding: 2px;
 }
 
-.lys-fam {
+.lys-fam2 {
   width: 100%;
   height: auto;
   scale: 0.7;
@@ -458,14 +470,14 @@ main > * {
   width: 100%;
   height: auto;
   scale: 0.7;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 
   &:hover {
     transform: scale(1.15);
-    content: url("../svg's/lys fam.svg");
+    content: url("../svg's/lys fam2.svg");
   }
 }
-main > .lys-fam,
+main > .lys-fam2,
 main > .mørk-fam {
   padding-block: 0;
   margin-top: -100px;
