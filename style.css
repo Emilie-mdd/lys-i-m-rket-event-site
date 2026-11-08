@@ -260,7 +260,6 @@ main > * {
 .form-placeholder,
 .opsamling-placeholder {
   background: rgba(255, 197, 132, 0.479);
-  border: 1px solid var(--color-border);
   border-radius: 18px;
 }
 
@@ -482,4 +481,8 @@ main > .mørk-fam {
   padding-block: 0;
   margin-top: -100px;
   margin-bottom: -40px;
+}
+a {
+  color: white;
+  text-decoration: none;
 }
