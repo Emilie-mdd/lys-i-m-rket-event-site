@@ -206,6 +206,14 @@ main > * {
   color: inherit;
   scale: 0.8;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .footer-content {
@@ -543,4 +551,10 @@ a {
   .hero-image {
     width: 80%;
   }
+}
+p.intro-tekst {
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 20px;
 }
