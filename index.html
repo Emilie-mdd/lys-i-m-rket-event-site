@@ -1,38 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lys i mørke</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lys i mørke</title>
-  <link rel="stylesheet" href="./starter.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="site-logo" href="./"><img src="img/Logo.png" alt="logo" />LYS I MØRKET</a>
+        <nav class="site-nav">
+          <button popovertarget="menu" type="button">Menu</button>
+          <ul class="menu" id="menu" popover>
+            <li><a href="./" aria-current="page">Forside</a></li>
+            <li><a href="./svg.html">Kort over event</a></li>
+            <li><a href="./form.html">Formular</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <header class="site-header">
-    <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
-      <nav class="site-nav">
-        <button>Menu</button>
-        <ul class="menu" id="menu" popover>
-          <li><a href="./" aria-current="page">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+      <h1>LYS I MØRKET</h1>
+      <h2>du vil ikke gå glip af dette</h2>
+      <section class="head">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ex quia sequi temporibus earum eum delectus eius repellendus modi esse accusamus optio minima, quibusdam unde quas! Repellendus quasi repellat quibusdam maxime laboriosam,
+          voluptatem numquam optio. Vitae earum nihil perspiciatis perferendis! Itaque assumenda adipisci molestiae iure ratione, deserunt quis deleniti dolorum voluptatibus commodi temporibus non cupiditate quod blanditiis mollitia? Quod praesentium
+        </p>
 
-  <main></main>
+        <img class="lanterner" src="img/lanterner.jpg" alt="" />
+      </section>
+      <div class="container">
+        <section class="cards">
+          <h2>Om os</h2>
+          <p>Find information om vores mission!</p>
+          <button class="cards_knap" popovertarget="om-os">klik her</button>
+          <div id="om-os" popover>
+            <h2>Om os</h2>
+            <p>Læs om noget spændende her</p>
+          </div>
+        </section>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
-    </div>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+        <section class="cards">
+          <h2>Program</h2>
+          <p>Se vores kommende events og aktiviteter</p>
+          <button class="cards_knap" popovertarget="program">Klik her</button>
+          <div id="program" popover>
+            <h2>Program</h2>
+            <p>Læs om noget spændende her</p>
+          </div>
+        </section>
 
+        <section class="cards">
+          <h2>Tilmelding</h2>
+          <p>Tilmeld dig til vores event her</p>
+          <button class="cards_knap" popovertarget="Tilmelding">klik her</button>
+          <div id="Tilmelding" popover>
+            <h2>Tilmelding</h2>
+            <p>Læs om noget spændende her</p>
+          </div>
+        </section>
+      </div>
+
+      <img class="familie" src="img/familie.svg" alt="" />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>LYS I MØRKET</p>
+        <p>Footer</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
