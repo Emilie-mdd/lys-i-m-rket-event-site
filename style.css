@@ -1,6 +1,5 @@
 /* Variabler */
 html {
-  --color-page: #f7f7f7;
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #666;
@@ -21,13 +20,32 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
+  background: linear-gradient(to left, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
+}
+
+/* Skrifttyper */
+h1 {
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
 }
 
 h1,
 h2,
 h3,
 p {
-  margin: 0;
+  margin: 0.5rem;
+  color: black;
+}
+
+h1 {
+  color: white;
 }
 
 main {
@@ -54,7 +72,7 @@ main > * {
 }
 
 .svg-intro p {
-  color: var(--color-muted);
+  color: white;
 }
 
 .svg-layout {
@@ -63,6 +81,36 @@ main > * {
   align-items: start;
   @media (width > 800px) {
     grid-template-columns: 1fr min(40%, 36ch);
+  }
+}
+
+/* Container til illustrationerne */
+.svg-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: -10px;
+  min-height: auto;
+  background: transparent;
+  border: none;
+}
+
+/* Selve illustrationerne */
+.illustration {
+  width: 33%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover-effekt */
+.illustration:hover {
+  transform: scale(1.15);
+}
+.mørk-fam2 {
+  &:hover {
+    transform: scale(1.15);
+    content: url("../svg's/lys fam2.svg");
   }
 }
 
@@ -122,9 +170,25 @@ main > * {
 
   display: grid;
   grid-template-columns: inherit;
-  background: var(--color-surface);
 }
 
+/* Header */
+.site-header {
+  background: #ff7f3551;
+}
+
+/* Footer */
+.site-footer {
+  background: #25264a98;
+  color: white;
+}
+.site-footer p {
+  color: white;
+  margin-right: 30px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
 .header-content,
 .footer-content {
   grid-column: 2;
@@ -140,8 +204,16 @@ main > * {
 
 .site-logo {
   color: inherit;
-  font-weight: 700;
+  scale: 0.8;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .footer-content {
@@ -150,7 +222,6 @@ main > * {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-1);
-  color: var(--color-muted);
 }
 
 /* Navigation */
@@ -163,19 +234,26 @@ main > * {
 
 .site-nav button {
   padding: 0.4rem 0.7rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border-radius: 10px;
+  background-color: #341e6cb3;
+  color: white;
+  &:hover {
+    background-color: rgb(207, 117, 79);
+    transition: 0.5s;
+  }
   @media (width > 600px) {
     display: none;
   }
 }
 
 .menu {
+  position-area: bottom span-left;
+  border-radius: 10px;
   margin: 0;
   padding: var(--space-1);
   list-style: none;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: #341e6cea;
+  border: 1px solid var (--color-border);
   @media (width > 600px) {
     display: flex;
     gap: var(--space-1);
@@ -188,10 +266,16 @@ main > * {
 
 .menu a {
   display: block;
-  padding: 0.4rem 0;
-  color: inherit;
+  padding: 0.5rem 0.8rem;
+  color: white;
   text-decoration: none;
   border-bottom: 2px solid #0000;
+  &:hover {
+    background-color: rgb(207, 117, 79);
+    color: black;
+    transition: 0.5s;
+  }
+  border-radius: 10px;
 }
 
 .menu a[aria-current="page"] {
@@ -203,8 +287,8 @@ main > * {
 .svg-placeholder,
 .form-placeholder,
 .opsamling-placeholder {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 197, 132, 0.479);
+  border-radius: 18px;
 }
 
 .panel {
@@ -232,13 +316,17 @@ main > * {
 }
 
 .accordion-item {
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  background: rgba(237, 164, 81, 0.24);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .accordion-item p {
   padding: 0 var(--space-1) var(--space-1);
-  color: var(--color-muted);
+  color: black;
 }
 
 /* Knap/link */
@@ -250,4 +338,223 @@ main > * {
   background: var(--color-surface);
   color: inherit;
   text-decoration: none;
+}
+
+.section-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.info-box {
+  min-height: 200px;
+  background-color: rgba(237, 164, 81, 0.541);
+  border-radius: 18px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.39);
+}
+
+.info-box h2 {
+  font-size: 24px;
+  color: #17283c;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+
+/* Mobilvenligt design */
+@media (max-width: 700px) {
+  .section-container {
+    flex-direction: column;
+  }
+}
+
+/* Selve popup-vinduet */
+#popup-om-os,
+#popup-program,
+#popup-tilmelding {
+  width: 300px;
+  max-width: 80%;
+  padding: 30px;
+
+  background-color: white;
+  color: #333;
+
+  border: none;
+  border-radius: 15px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  margin: 0;
+
+  opacity: 1;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    overlay 0.4s allow-discrete,
+    display 0.4s allow-discrete;
+}
+
+/* Animation når popup åbner */
+@starting-style {
+  #popup-om-os:popover-open,
+  #popup-program:popover-open,
+  #popup-tilmelding:popover-open {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+
+/* Animation når popup lukker */
+#popup-om-os:not(:popover-open),
+#popup-program:not(:popover-open),
+#popup-tilmelding:not(:popover-open) {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+/* Overskriften i popup-vinduet */
+#popup-om-os h2,
+#popup-program h2,
+#popup-tilmelding h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Teksten i popup-vinduet */
+#popup-om-os p,
+#popup-program p,
+#popup-tilmelding p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Baggrunden bag popup-vinduet */
+#popup-om-os::backdrop,
+#popup-program::backdrop,
+#popup-tilmelding::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Knappen, der åbner popup-vinduet */
+.popup button {
+  background-color: #341e6cb3;
+  color: white;
+
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* Hover-effekt på knappen */
+.popup button:hover {
+  background-color: #c5662b;
+}
+
+.site-logo img {
+  width: 85px;
+  height: auto;
+  display: block;
+  padding: 2px;
+}
+
+.lys-fam2 {
+  width: 100%;
+  height: auto;
+  scale: 0.7;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.15);
+    content: url("../svg's/mørk fam.svg");
+  }
+}
+.mørk-fam {
+  width: 100%;
+  height: auto;
+  scale: 0.7;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.15);
+    content: url("../svg's/lys fam2.svg");
+  }
+}
+main > .lys-fam2,
+main > .mørk-fam {
+  padding-block: 0;
+  margin-top: -100px;
+  margin-bottom: -40px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  color: white;
+}
+
+.hero-text h2 {
+  color: white;
+}
+
+.hero-image {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+@media (max-width: 700px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 80%;
+  }
+}
+p.intro-tekst {
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 20px;
 }

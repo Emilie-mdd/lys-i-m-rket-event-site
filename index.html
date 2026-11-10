@@ -1,38 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lys i mørke</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lys i mørke</title>
-  <link rel="stylesheet" href="./starter.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="site-logo" href="./"
+          ><img src="../svg's/logo.svg" alt="Lys i mørket" />
+          <span>Lys i mørket</span>
+        </a>
+        <nav class="site-nav">
+          <button popovertarget="menu" type="button">Menu</button>
+          <ul class="menu" id="menu" popover>
+            <li><a href="./" aria-current="page">Forside</a></li>
+            <li><a href="./svg.html">Interaktiv SVG</a></li>
+            <li><a href="./form.html">Formular</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <header class="site-header">
-    <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
-      <nav class="site-nav">
-        <button>Menu</button>
-        <ul class="menu" id="menu" popover>
-          <li><a href="./" aria-current="page">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+      <img src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
+      <section class="hero-section">
+        <div class="hero-text">
+          <h1>Velkommen til Lys i mørket</h1>
+          <h2>Hero section</h2>
+          <p class="intro-tekst">Velkommen til vores event-side, hvor vi deler information om vores kommende arrangementer og aktiviteter. Udforsk vores program, tilmeld dig vores events, og lær mere om vores organisation.</p>
+        </div>
 
-  <main></main>
+        <img class="hero-image" src="../pics/lanterner.jpg" alt="Billede til hero section" />
+      </section>
+      <div class="section-container">
+        <section class="info-box">
+          <h2><strong>Om os</strong></h2>
+          <p>Information om vores organisation og mission.</p>
+          <section class="popup">
+            <button popovertarget="popup-om-os">Klik her</button>
+            <div id="popup-om-os" popover>
+              <h2>Om os</h2>
+              <p>lalalala</p>
+              <img src="../pics/✭.jpeg" alt="Om os billede" />
+            </div>
+          </section>
+        </section>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
-    </div>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+        <section class="info-box">
+          <h2><strong>Program</strong></h2>
+          <p>Se vores kommende events og aktiviteter.</p>
+          <section class="popup">
+            <button popovertarget="popup-program">Klik her</button>
+            <div id="popup-program" popover>
+              <h2>Program</h2>
+              <ul>
+                <li>Kl 19:00 stjernekastere</li>
+                <li>Kl 20:00 madboder, diy og musik</li>
+                <li>Kl 21:00 sæt lanterner i havnen</li>
+              </ul>
+              <img src="../svg's/program.svg" alt="Program billede" />
+              <p>
+                Klik her for at se <button><a href="svg.html">Programmet</a></button>
+              </p>
+            </div>
+          </section>
+        </section>
 
+        <section class="info-box">
+          <h2><strong>Tilmelding</strong></h2>
+          <p>Udfyld vores formular for at tilmelde dig.</p>
+          <section class="popup">
+            <button popovertarget="popup-tilmelding">Klik her</button>
+            <div id="popup-tilmelding" popover>
+              <h2>Tilmelding</h2>
+              <p>lalalala</p>
+              <img src="../pics/Anime.jpeg" alt="Tilmelding billede" />
+            </div>
+          </section>
+        </section>
+      </div>
+      <img class="lys-fam2" src="../svg's/lys fam2.svg" alt="lys familie" />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <a class="site-logo" href="./">
+          <img src="../svg's/logo.svg" alt="Lys i mørket" />
+        </a>
+        <p>Lys i mørket</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
