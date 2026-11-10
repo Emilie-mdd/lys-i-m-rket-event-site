@@ -395,17 +395,20 @@ main > * {
 #popup-om-os,
 #popup-program,
 #popup-tilmelding {
-  width: 300px;
+  width: 400px;
   max-width: 80%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-sizing: border-box;
   padding: 30px;
 
-  background-color: white;
-  color: #333;
+  background-color: #fff1df;
+  color: #59443d;
 
-  border: none;
-  border-radius: 15px;
+  border: 2px solid #f2c5a5;
+  border-radius: 22px;
 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 35px rgba(70, 35, 25, 0.25);
 
   text-align: center;
 
@@ -445,8 +448,22 @@ main > * {
 #popup-om-os h2,
 #popup-program h2,
 #popup-tilmelding h2 {
-  color: #333;
+  color: #542f27;
   margin-bottom: 15px;
+  font-size: 25px;
+}
+
+/* Dekorativ streg under overskriften */
+#popup-om-os h2::after,
+#popup-program h2::after,
+#popup-tilmelding h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 3px;
+  background: #d98255;
+  border-radius: 10px;
+  margin: 10px auto 0;
 }
 
 /* Teksten i popup-vinduet */
@@ -454,7 +471,19 @@ main > * {
 #popup-program p,
 #popup-tilmelding p {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.7;
+  text-align: left;
+  color: #59443d;
+}
+
+/* Billedet i Om os-popup'en */
+#popup-om-os .om-os-billede {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #e9b18c;
+  display: block;
+  margin: 12px auto;
 }
 
 /* Baggrunden bag popup-vinduet */
@@ -591,7 +620,102 @@ p.intro-tekst {
   justify-items: center;
   align-items: center;
 }
-.om-os-billede {
+.om-os-billede,
+.tilmelding-billede {
   border-radius: 10px;
   filter: brightness(150%);
+}
+
+/* PROGRAM POPUP */
+
+/* Programlisten */
+#popup-program .program-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 330px;
+}
+
+/* Hver aktivitet */
+#popup-program .program-punkt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  background: rgba(217, 130, 85, 0.13);
+  border-left: 4px solid #d98255;
+  border-radius: 12px;
+  text-align: left;
+}
+
+/* Tidspunkterne */
+#popup-program .program-tid {
+  background: #a95136;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  white-space: nowrap;
+}
+
+/* Aktiviteterne */
+#popup-program .program-aktivitet {
+  color: #59443d;
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+}
+
+/* Illustrationen */
+#popup-program img,
+#popup-tilmelding img {
+  display: block;
+  max-width: 280px;
+  height: auto;
+  margin: 20px auto;
+}
+
+/* CTA-container */
+#popup-program .program-cta #popup-tilmelding .cta-knap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  margin: 25px auto 5px;
+}
+
+/* CTA-tekst */
+#popup-program .program-cta p,
+#popup-tilmelding .cta-knap p {
+  color: #59443d;
+  text-align: center;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* CTA-knappen */
+#popup-program .cta-knap,
+#popup-tilmelding .cta-knap {
+  display: inline-block;
+  background-color: #a95136;
+  color: white;
+  padding: 13px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hover på CTA-knappen */
+#popup-program .cta-knap:hover,
+#popup-tilmelding .cta-knap:hover {
+  background-color: #724cb8;
+  transform: translateY(-3px);
 }
