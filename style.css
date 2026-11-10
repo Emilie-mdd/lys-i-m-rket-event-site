@@ -195,7 +195,7 @@ main > * {
 }
 
 .header-content {
-  min-height: 4rem;
+  min-height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -214,6 +214,9 @@ main > * {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 22px;
+}
+.site-logo img {
+  scale: 3;
 }
 
 .footer-content {
@@ -493,6 +496,13 @@ main > * {
     content: url("../svg's/mørk fam.svg");
   }
 }
+@media (max-width: 800px) {
+  .lys-fam2,
+  .mørk-fam {
+    scale: 0.5;
+  }
+}
+
 .mørk-fam {
   width: 100%;
   height: auto;
