@@ -1,5 +1,6 @@
 /* Variabler */
 html {
+  overflow-x: clip;
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #666;
@@ -17,10 +18,12 @@ html {
 /* Globalt layout */
 body {
   margin: 0;
+  width: 100%;
   min-height: 100vh;
+  box-sizing: border-box;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 75rem) minmax(0, 1fr);
   background: linear-gradient(to left, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
 }
 
@@ -180,10 +183,11 @@ main > * {
 
 /* Footer */
 .site-footer {
-  background: #25264a98;
-  color: white;
+  grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
+  background: #25264a98;
+  color: white;
 }
 .site-footer p {
   color: white;
@@ -359,7 +363,7 @@ main > * {
 
 .info-box {
   min-height: 200px;
-  background-color: rgba(237, 164, 81, 0.541);
+  background-color: #d9a064;
   border-radius: 18px;
   padding: 30px;
   display: flex;
@@ -718,4 +722,30 @@ p.intro-tekst {
 #popup-tilmelding .cta-knap:hover {
   background-color: #724cb8;
   transform: translateY(-3px);
+}
+
+/* Bånd bag pop-up-vinduerne */
+/* Container til info-boksene */
+.section-container {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Bånd bag info-boksene */
+.popup-baand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 270px;
+  background-color: #d9815594;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Info-boksene ligger foran båndet */
+.info-box {
+  position: relative;
+  z-index: 1;
 }
