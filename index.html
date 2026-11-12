@@ -6,12 +6,7 @@
     <title>Lys i mørke</title>
     <link rel="stylesheet" href="./starter.css" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-    <link rel="shortcut icon" href="../favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <link rel="icon" href="./favicon/favicon.ico?v=3" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +19,7 @@
     <header class="site-header">
       <div class="header-content">
         <a class="site-logo" href="./"
-          ><img src="../svg's/logo.svg" alt="Lys i mørket" />
+          ><img src="../svg's/logo2.svg" alt="Lys i mørket" />
           <span>Lys i mørket</span>
         </a>
         <nav class="site-nav">
@@ -39,26 +34,36 @@
     </header>
 
     <main>
-      <img src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
       <section class="hero-section">
         <div class="hero-text">
+          <div class="stjerne-container">
+            <img class="stjerne-lanterne" src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
+            <img class="stjerne-lanterne" src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
+            <img class="stjerne-lanterne" src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
+          </div>
           <h1>Velkommen til Lys i mørket</h1>
           <h2>Hero section</h2>
           <p class="intro-tekst">Velkommen til vores event-side, hvor vi deler information om vores kommende arrangementer og aktiviteter. Udforsk vores program, tilmeld dig vores events, og lær mere om vores organisation.</p>
+          <div class="stjerne-container">
+            <img class="stjerne-lanterne" src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
+            <img class="stjerne-lanterne" src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
+            <img class="stjerne-lanterne" src="../pics/stjerne_lanterne.png" alt="Stjerne og lanterne" />
+          </div>
         </div>
-
         <img class="hero-image" src="../pics/lanterner.jpg" alt="Billede til hero section" />
       </section>
+
       <div class="section-container">
+        <div class="popup-baand"></div>
         <section class="info-box">
           <h2><strong>Om os</strong></h2>
           <p>Information om vores organisation og mission.</p>
           <section class="popup">
             <button popovertarget="popup-om-os">Klik her</button>
             <div id="popup-om-os" popover>
-              <h2>Om os</h2>
-              <p>lalalala</p>
-              <img src="../pics/✭.jpeg" alt="Om os billede" />
+              <img class="om-os-billede" src="./pics/stjernekaster.jpg" alt="Om os billede" />
+              <h2>Hvem er vi?</h2>
+              <p>Vi er en organisation, der ønsker at skabe fællesskab, håb og gode oplevelser gennem vores arrangementer.<br />Her kan du lære mere om vores formål, værdier og det arbejde, vi står sammen om.</p>
             </div>
           </section>
         </section>
@@ -69,16 +74,25 @@
           <section class="popup">
             <button popovertarget="popup-program">Klik her</button>
             <div id="popup-program" popover>
-              <h2>Program</h2>
-              <ul>
-                <li>Kl 19:00 stjernekastere</li>
-                <li>Kl 20:00 madboder, diy og musik</li>
-                <li>Kl 21:00 sæt lanterner i havnen</li>
-              </ul>
-              <img src="../svg's/program.svg" alt="Program billede" />
-              <p>
-                Klik her for at se <button><a href="svg.html">Programmet</a></button>
-              </p>
+              <div class="program-liste">
+                <div class="program-punkt">
+                  <span class="program-tid">19:00</span>
+                  <span class="program-aktivitet">Stjernekastere og gåtur</span>
+                </div>
+                <div class="program-punkt">
+                  <span class="program-tid">20:00</span>
+                  <span class="program-aktivitet">Madboder, DIY og musik</span>
+                </div>
+                <div class="program-punkt">
+                  <span class="program-tid">21:00</span>
+                  <span class="program-aktivitet">Sæt lanterner i havnen</span>
+                </div>
+              </div>
+              <img src="../svg's/program.svg" alt="Illustration af aftenens program" />
+              <div class="program-cta">
+                <p>Klik her for at se hele programmet</p>
+                <a href="./svg.html" class="cta-knap">Programmet →</a>
+              </div>
             </div>
           </section>
         </section>
@@ -89,9 +103,10 @@
           <section class="popup">
             <button popovertarget="popup-tilmelding">Klik her</button>
             <div id="popup-tilmelding" popover>
+              <img class="tilmelding-billede" src="./pics/lanterne i vand.jpg" alt="Tilmelding billede" />
               <h2>Tilmelding</h2>
-              <p>lalalala</p>
-              <img src="../pics/Anime.jpeg" alt="Tilmelding billede" />
+              <p>Kom og vær med til en hyggelig aften fyldt med lys, fællesskab og gode oplevelser! ✨ Udfyld formularen herunder for at blive en del af en aften, hvor vi sammen spreder lys i mørket.</p>
+              <a href="./form.html" class="cta-knap">Formular →</a>
             </div>
           </section>
         </section>
@@ -102,7 +117,7 @@
     <footer class="site-footer">
       <div class="footer-content">
         <a class="site-logo" href="./">
-          <img src="../svg's/logo.svg" alt="Lys i mørket" />
+          <img src="../svg's/logo2.svg" alt="Lys i mørket" />
         </a>
         <p>Lys i mørket</p>
       </div>
