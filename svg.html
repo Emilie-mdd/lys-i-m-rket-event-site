@@ -22,8 +22,9 @@
   <body>
     <header class="site-header">
       <div class="header-content">
-        <a class="site-logo" href="./">
-          <img src="../pics/logo-noback.png" alt="Lys i mørket" />
+        <a class="site-logo" href="./"
+          ><img src="../svg's/logo2.svg" alt="Lys i mørket" />
+          <span>Lys i mørket</span>
         </a>
         <nav class="site-nav">
           <button popovertarget="menu" type="button">Menu</button>
@@ -39,29 +40,44 @@
     <main>
       <section class="svg-page">
         <header class="svg-intro">
-          <h1>Interaktiv SVG</h1>
-          <p>Indsæt din egen SVG og forbind den med punkterne nedenfor.</p>
+          <h1>Se frem til en begivenhedsrig dag, med masser af lys i mørket!</h1>
+          <p>Nedenfor ser du et kort over lys i mørkets aktiviteter. klik til højre og udforsk vores event!</p>
         </header>
 
         <section class="svg-layout">
-          <div class="svg-placeholder"></div>
+          <div class="svg-placeholder">
+            <svg viewBox="0 0 1920 1080">
+              <use class="baggrund" href="pics/kort_final.svg#Baggrund"></use>
+              <use href="pics/kort_final.svg#familie"></use>
+              <use href="pics/kort_final.svg#boder"></use>
+              <use href="pics/kort_final.svg#musik"></use>
+              <use class="stjerne" href="pics/kort_final.svg#stjerne"></use>
+            </svg>
+          </div>
 
           <article class="panel">
             <h2>Udforsk eventet</h2>
             <div class="accordion">
               <!-- TODO: Lav om til details/summary -->
               <div class="accordion-item">
-                <h3>Start</h3>
-                <p></p>
+                <details name="my-detail">
+                  <summary id="vaelg-start">Start</summary>
+                  <p>Vi starter kl 17:00 hvor vi går en tur blabla</p>
+                </details>
               </div>
               <div class="accordion-item">
-                <h3>Midt i eventet</h3>
-                <p></p>
+                <details name="my-detail">
+                  <summary id="Vaelg-aktivitet">Aktiviteter</summary>
+                  <p>Her kan du lave lanterner og lys blabla</p>
+                </details>
               </div>
               <div class="accordion-item">
-                <h3>Slut</h3>
-                <p></p>
+                <details name="my-detail">
+                  <summary id="Vaelg-slut">Afslutning</summary>
+                  <p>Vi sætter lanterne i vandet og hører livemusik blabla</p>
+                </details>
               </div>
+              <p id="besked"></p>
             </div>
           </article>
         </section>
@@ -71,7 +87,7 @@
 
     <footer class="site-footer">
       <div class="footer-content">
-        <a class="site-logo" href="./"><img src="../pics/logo-noback.png" alt="logo" /></a>
+        <a class="site-logo" href="./"><img src="../svg's/logo2.svg" alt="Lys i mørket" /> </a>
         <p>Lys i mørket</p>
       </div>
     </footer>
