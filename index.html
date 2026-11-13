@@ -1,38 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lys i mørke</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lys i mørke</title>
-  <link rel="stylesheet" href="./starter.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="site-logo" href="./">Lys i mørket</a>
+        <!-- her er logoet oppe i menuen -->
+        <nav class="site-nav">
+          <button popovertarget="menu" type="button">Menu</button>
+          <ul class="menu-list" id="menu" popover>
+            <li><a class="menu-item" href="./" aria-current="page">Forside</a></li>
+            <li><a class="menu-item" href="./svg.html">Interaktiv SVG</a></li>
+            <li><a class="menu-item" href="./form.html">Tilmelding</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <header class="site-header">
-    <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
-      <nav class="site-nav">
-        <button>Menu</button>
-        <ul class="menu" id="menu" popover>
-          <li><a href="./" aria-current="page">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+      <!-- HERO / VELKOMSTSEKTION -->
+      <section class="hero">
+        <div class="hero-indhold">
+          <h1>Lys i mørket</h1>
+          <p class="hero-tekst">Oplev vintermørket på en ny måde gennem lys, kreativitet og fællesskab.</p>
 
-  <main></main>
+          <img class="forside-svg" src="svg/mørk fam.svg" alt="familie" />
+        </div>
+      </section>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
-    </div>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+      <!-- INFOBOKSE: De tre bokse, som altid er synlige på hjemmesiden -->
+      <div class="stjerne-intro">
+        <h2>Oplev lys i mørket</h2>
+        <p>Find information om arrangementet, aftenens program og hvordan du kan deltage.</p>
+      </div>
 
+      <section class="stjerne-infoboks">
+        <div class="infoboks-indhold">
+          <div>
+            <h2>Om os</h2>
+            <button popovertarget="om-os">Klik her</button>
+          </div>
+        </div>
+
+        <div class="infoboks-indhold">
+          <div>
+            <h2>Program</h2>
+            <button popovertarget="program">Klik her</button>
+          </div>
+        </div>
+
+        <div class="infoboks-indhold">
+          <div>
+            <h2>Tilmelding</h2>
+            <button popovertarget="tilmelding">Klik her</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- POPOVERS: De tre ekstra informationsvinduer, som åbnes ved klik på knapperne ovenfor -->
+      <div id="om-os" class="infoboks-popover" popover>
+        <img src="" alt="" />
+        <div class="infoboks-popover-indhold">
+          <h2>Om os</h2>
+          <p>Vi inviterer dig til en stemningsfuld vintervandring i København, hvor lys, kreativitet og fællesskab mødes.</p>
+          <button popovertarget="om-os">Luk</button>
+        </div>
+      </div>
+
+      <div id="program" class="infoboks-popover" popover>
+        <img src="" alt="" />
+        <div class="infoboks-popover-indhold">
+          <h2>Program</h2>
+          <p>Gå på opdagelse blandt smukke lysinstallationer, oplev hyggelig musik og afslut turen med varme drikke.</p>
+          <button popovertarget="program">Luk</button>
+        </div>
+      </div>
+
+      <div id="tilmelding" class="infoboks-popover" popover>
+        <img src="" alt="" />
+        <div class="infoboks-popover-indhold">
+          <h2>Tilmelding</h2>
+          <p>Kom med til en hyggelig aften i lysets tegn. Her finder du information om deltagelse og tilmelding.</p>
+          <button popovertarget="tilmelding">Luk</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p></p>
+        <p>© 2026 Lys i mørket. Nanna, Emilie, Matilde</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>

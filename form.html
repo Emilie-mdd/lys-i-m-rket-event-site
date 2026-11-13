@@ -1,47 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formular | Eventnavn</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formular | Eventnavn</title>
-  <link rel="stylesheet" href="./starter.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="site-logo" href="./">Eventnavn</a>
+        <nav class="site-nav">
+          <button popovertarget="menu" type="button">Menu</button>
+          <ul class="menu-list" id="menu" popover>
+            <li><a class="menu-item" href="./">Forside</a></li>
+            <li><a class="menu-item" href="./svg.html">Interaktiv SVG</a></li>
+            <li><a class="menu-item" href="./form.html" aria-current="page">Formular</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <header class="site-header">
-    <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
-      <nav class="site-nav">
-        <button>Menu</button>
-        <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html" aria-current="page">Formular</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+      <section class="form-page">
+        <header class="form-intro">
+          <h1>Formular</h1>
+          <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
+        </header>
 
-  <main>
-    <section class="form-page">
-      <header class="form-intro">
-        <h1>Formular</h1>
-        <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
-      </header>
+        <!-- Formularen samler felterne og sender oplysningerne til opsamlingssiden -->
+        <form class="form-placeholder" action="./opsamling.html" method="get">
+          <!-- Navn -->
+          <label for="navn">Fulde navn</label>
+          <input type="text" id="navn" name="navn" required />
 
-      <form class="form-placeholder" action="./opsamling.html"></form>
-    </section>
-  </main>
+          <!-- E-mail -->
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
-    </div>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+          <!-- Antal deltagere -->
+          <label for="deltagere">Antal deltagere</label>
+          <input type="number" id="deltagere" name="deltagere" min="1" max="10" value="1" required />
 
+          <!-- Valg af dekoration: Fieldset samler valgmulighederne, og legend giver gruppen en overskrift -->
+          <fieldset>
+            <legend>Hvad vil du gerne dekorere?</legend>
+
+            <!-- Radio-knapper gør det muligt kun at vælge én mulighed -->
+            <label for="eget-glas">
+              <input type="checkbox" id="eget-glas" name="dekoration" value="eget-glas" required />
+              Mit eget medbragte glas
+            </label>
+
+            <label for="genbrugt-glas">
+              <input type="checkbox" id="genbrugt-glas" name="dekoration" value="genbrugt-glas" />
+              Jeg vil gerne købe et glas
+            </label>
+
+            <label for="lanterne">
+              <input type="checkbox" id="lanterne" name="dekoration" value="lanterne" />
+              Jeg vil gerne købe en vandlanterne
+            </label>
+
+            <label for="ingen">
+              <input type="checkbox" id="ingen" name="dekoration" value="ingen" />
+              Jeg vil ikke dekorere noget
+            </label>
+          </fieldset>
+
+          <!-- Checkbox: Brugeren skal acceptere betingelserne -->
+          <label for="betingelser">
+            <input type="checkbox" id="betingelser" name="betingelser" value="accepteret" required />
+            Jeg accepterer eventets betingelser
+          </label>
+
+          <!-- Submit-knap: Sender formularens oplysninger videre -->
+          <button type="submit">Tilmeld</button> 
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>Eventnavn</p>
+        <p>Footer</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
