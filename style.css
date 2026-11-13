@@ -23,8 +23,16 @@ body {
   box-sizing: border-box;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 75rem) minmax(0, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(0, 75rem) minmax(1rem, 1fr);
   background: linear-gradient(to left, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
+}
+
+html,
+body,
+* {
+  cursor:
+    url("pics/curser.svg") 8 8,
+    auto;
 }
 
 /* Skrifttyper */
@@ -85,6 +93,7 @@ main > * {
   align-items: start;
   @media (width > 800px) {
     grid-template-columns: 1fr min(40%, 36ch);
+    padding: 1rem;
   }
 }
 
@@ -95,8 +104,8 @@ main > * {
   align-items: center;
   gap: -10px;
   min-height: auto;
-  background: transparent;
   border: none;
+  padding: 1rem;
 }
 
 /* Selve illustrationerne */
@@ -296,13 +305,16 @@ main > * {
 
 /* Flader */
 .panel,
-.svg-placeholder,
 .form-placeholder,
 .opsamling-placeholder {
   background: rgba(255, 197, 132, 0.479);
   border-radius: 18px;
 }
 
+.svg-placeholder {
+  background: #010124;
+  border-radius: 18px;
+}
 .panel {
   padding: var(--space-1);
   display: grid;
@@ -331,8 +343,11 @@ main > * {
   background: rgba(237, 164, 81, 0.24);
   border-radius: 10px;
   transition: transform 0.3s ease;
+  padding: 1rem;
+  font-size: 16px;
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 }
 
@@ -749,3 +764,9 @@ p.intro-tekst {
   position: relative;
   z-index: 1;
 }
+
+/* svg popup styling */
+/* .baggrund {
+  border-radius: 20px;
+  border-color: solid red;
+} */
