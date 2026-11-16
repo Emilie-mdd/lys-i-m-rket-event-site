@@ -38,10 +38,16 @@ body,
 /* Skrifttyper */
 h1 {
   font-family: "Roboto", sans-serif;
+  color: white;
 }
 
 h2 {
   font-family: "Lato", sans-serif;
+  color: white;
+}
+
+h3 {
+  color: white;
 }
 
 p {
@@ -53,11 +59,6 @@ h2,
 h3,
 p {
   margin: 0.5rem;
-  color: black;
-}
-
-h1 {
-  color: white;
 }
 
 main {
@@ -199,7 +200,6 @@ main > * {
   color: white;
 }
 .site-footer p {
-  color: white;
   margin-right: 30px;
   margin-top: 30px;
   font-size: 18px;
@@ -305,10 +305,204 @@ main > * {
 
 /* Flader */
 .panel,
-.form-placeholder,
 .opsamling-placeholder {
   background: rgba(255, 197, 132, 0.479);
   border-radius: 18px;
+}
+
+/*form styling*/
+.form-page {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-intro {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  max-width: 60ch;
+}
+
+.form-intro p {
+  color: white;
+  line-height: 1.6;
+}
+
+/* Formularboksen: */
+.form-placeholder {
+  display: grid;
+  gap: 1.5rem;
+  background: rgba(255, 197, 132, 0.35);
+  border: 1px solid rgba(255, 241, 176, 0.4);
+  border-radius: 18px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/*------------*/
+/* Formularens felter */
+.form-placeholder > div {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-placeholder label {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Inputfelter i formularen*/
+.form-placeholder input[type="text"],
+.form-placeholder input[type="email"],
+.form-placeholder input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem;
+  border: 1px solid #e9bd70;
+  border-radius: 9px;
+  background: #fff1df;
+  color: #25264a;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Dropdown-menu */
+.form-placeholder select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem;
+  border: 1px solid #e9bd70;
+  border-radius: 9px;
+  background: #fff1df;
+  color: #25264a;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Mulighederne i dropdown-listen */
+.form-placeholder select option {
+  background-color: #25264a;
+  color: #fff1b0;
+}
+
+/* Hover på mulighederne i dropdown-listen */
+.form-placeholder select option:hover {
+  background-color: #a95136;
+  color: #fff1b0;
+}
+
+/* Når man klikker på et inputfelt */
+.form-placeholder input:focus {
+  border-color: #a95136;
+  box-shadow: 0 0 0 3px rgba(169, 81, 54, 0.2);
+}
+
+/* Dekoration på formularen */
+.form-placeholder fieldset {
+  display: grid;
+  gap: 0.8rem;
+  border: 1px solid rgba(255, 241, 176, 0.6);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.form-placeholder legend {
+  color: white;
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+/* Checkbox og tekst */
+.form-placeholder fieldset label,
+.form-placeholder > label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* Selve checkboxene */
+/* Stjerner i stedet for almindelige checkbokse */
+.form-placeholder input[type="checkbox"],
+.form-placeholder input[type="radio"] {
+  appearance: none; /* Fjerner browserens standard-checkbox */
+  width: 22px; /* stjernens bredde */
+  height: 22px; /* stjernens højde */
+  margin: 0;
+  cursor: pointer; /* Viser en hånd, når man holder musen over stjernen */
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  transform: translateY(-3px); /* placere hvor højt stjernerne er ift. teksten */
+}
+
+.form-placeholder input[type="checkbox"]::before,
+.form-placeholder input[type="radio"]::before {
+  content: "☆"; /* Indsætter en tom stjerne */
+  font-size: 25px; /* stjernens størrelse */
+  color: #fff1b0;
+  line-height: 1;
+}
+
+.form-placeholder input[type="checkbox"]:checked::before,
+.form-placeholder input[type="radio"]:checked::before {
+  content: "★"; /* ændrer til en fyldt stjerne, når checkboxen er markeret. */
+}
+
+/* Tilmeldingsknap */
+.form-placeholder button {
+  justify-self: start;
+  background: #a95136;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.form-placeholder button:hover {
+  background: #724cb8;
+  transform: translateY(-3px);
+}
+
+/* Mobilvisning af formular*/
+@media (width > 600px) {
+  .form-page {
+    grid-template-columns: min(40%, 50ch) 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-page {
+    grid-template-columns: 1fr;
+  }
+
+  .form-intro {
+    order: -1;
+  }
+
+  .form-placeholder {
+    padding: 1.2rem;
+  }
+}
+
+/*---------------------*/
+
+legend {
+  display: contents;
 }
 
 .svg-placeholder {
@@ -591,14 +785,6 @@ a {
   flex: 1;
 }
 
-.hero-text h1 {
-  color: white;
-}
-
-.hero-text h2 {
-  color: white;
-}
-
 .hero-image {
   width: 40%;
   height: auto;
@@ -619,7 +805,6 @@ p.intro-tekst {
   color: rgba(255, 255, 255, 0.822);
   font-size: 14px;
   line-height: 1.6;
-  margin: 20px;
   transition: transform 0.4 ease;
 }
 .stjerne-lanterne {
