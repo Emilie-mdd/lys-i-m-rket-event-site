@@ -369,6 +369,31 @@ main > * {
     box-shadow 0.3s ease;
 }
 
+/* Dropdown-menu */
+.form-placeholder select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem;
+  border: 1px solid #e9bd70;
+  border-radius: 9px;
+  background: #fff1df;
+  color: #25264a;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Mulighederne i dropdown-listen */
+.form-placeholder select option {
+  background-color: #25264a;
+  color: #fff1b0;
+}
+
+/* Hover på mulighederne i dropdown-listen */
+.form-placeholder select option:hover {
+  background-color: #a95136;
+  color: #fff1b0;
+}
+
 /* Når man klikker på et inputfelt */
 .form-placeholder input:focus {
   border-color: #a95136;
@@ -402,7 +427,8 @@ main > * {
 
 /* Selve checkboxene */
 /* Stjerner i stedet for almindelige checkbokse */
-.form-placeholder input[type="checkbox"] {
+.form-placeholder input[type="checkbox"],
+.form-placeholder input[type="radio"] {
   appearance: none; /* Fjerner browserens standard-checkbox */
   width: 22px; /* stjernens bredde */
   height: 22px; /* stjernens højde */
@@ -417,14 +443,16 @@ main > * {
   transform: translateY(-3px); /* placere hvor højt stjernerne er ift. teksten */
 }
 
-.form-placeholder input[type="checkbox"]::before {
+.form-placeholder input[type="checkbox"]::before,
+.form-placeholder input[type="radio"]::before {
   content: "☆"; /* Indsætter en tom stjerne */
   font-size: 25px; /* stjernens størrelse */
   color: #fff1b0;
   line-height: 1;
 }
 
-.form-placeholder input[type="checkbox"]:checked::before {
+.form-placeholder input[type="checkbox"]:checked::before,
+.form-placeholder input[type="radio"]:checked::before {
   content: "★"; /* ændrer til en fyldt stjerne, når checkboxen er markeret. */
 }
 

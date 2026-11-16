@@ -36,11 +36,10 @@
         <header class="form-intro">
           <h1>Tilmelding</h1>
           <h2>Vær med til at lyse vintermørket op.</h2>
-          <p>Tilmeld dig en aften med hyggelige oplevelser, 
-            kreativ udfoldelse og små lysglimt, der samler os.</p>
+          <p>Tilmeld dig en aften med hyggelige oplevelser, kreativ udfoldelse og små lysglimt, der samler os.</p>
         </header>
 
-        <!-- Formularen samler felterne og sender oplysningerne til opsamlingssiden -->
+        <!-- TEXT: Formularen samler felterne og sender oplysningerne til opsamlingssiden -->
         <form class="form-placeholder" action="./opsamling.html" method="get">
           <!-- Navn -->
           <div>
@@ -57,31 +56,60 @@
             <label for="deltagere">Antal deltagere</label>
             <input type="number" id="deltagere" name="deltagere" min="1" max="10" value="1" required />
           </div>
-          <!-- Valg af dekoration: Fieldset samler valgmulighederne, og legend giver gruppen en overskrift -->
-          <fieldset>
-            <legend>Hvad vil du gerne dekorere?</legend>
 
-            <!-- Radio-knapper gør det muligt kun at vælge én mulighed -->
+          <!-- CHECKBOX: Valg af dekoration (Fieldset samler valgmulighederne, og legend giver gruppen en overskrift) -->
+          <fieldset>
+            <legend>Hvilke kreative aktiviteter vil du deltage i?</legend>
+
             <label for="eget-glas">
-              <input type="checkbox" id="eget-glas" name="dekoration" value="eget-glas" required />
-              Mit eget medbragte glas
+              <input type="checkbox" id="eget-glas" name="dekoration" value="eget-glas" />
+              Dekorere mit eget medbragte glas
             </label>
 
             <label for="genbrugt-glas">
               <input type="checkbox" id="genbrugt-glas" name="dekoration" value="genbrugt-glas" />
-              Jeg vil gerne købe et glas
+              Dekorere et glas fra Lys i mørket´s udvalg
             </label>
 
             <label for="lanterne">
               <input type="checkbox" id="lanterne" name="dekoration" value="lanterne" />
-              Jeg vil gerne købe en vandlanterne
+              Dekorere en vandlanterne
             </label>
 
             <label for="ingen">
               <input type="checkbox" id="ingen" name="dekoration" value="ingen" />
-              Jeg vil ikke dekorere noget
+              Jeg vil blot nyde eventet
             </label>
           </fieldset>
+
+          <!-- RADIO: Valg af billetdesign (opsamlingssiden vises i disse 2 variationer) -->
+          <fieldset>
+            <legend>Vælg designet på din personlige billet</legend>
+
+            <label for="varmt-lys">
+              <input type="radio" id="varmt-lys" name="stemning" value="varmt-lys" required />
+              Solnedgangsmagi: gylden aftenglød
+            </label>
+
+            <label for="stjernelys">
+              <input type="radio" id="stjernelys" name="stemning" value="stjernelys" />
+              Stjernedrys: magisk nattehimmel
+            </label>
+          </fieldset>
+
+          <!-- DROPDOWN -->
+          <div>
+            <label for="kilde">Hvor har du hørt om Lys i mørket?</label>
+
+            <select id="kilde" name="kilde" required>
+              <option value="">Vælg en mulighed</option>
+              <option value="instagram">Instagram</option>
+              <option value="facebook">Facebook</option>
+              <option value="andet">Andet</option>
+            </select>
+
+            <input type="text" id="andet-kilde" name="andet-kilde" placeholder="Skriv dit svar her" hidden />
+          </div>
 
           <!-- Checkbox: Brugeren skal acceptere betingelserne -->
           <label for="betingelser">
