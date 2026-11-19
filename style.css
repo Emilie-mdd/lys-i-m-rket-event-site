@@ -854,6 +854,7 @@ legend {
 .accordion-item p {
   padding: 0 var(--space-1) var(--space-1);
   color: black;
+  animation: accordion-open 0.4s ease;
 }
 
 /* Knap/link */
