@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link rel="shortcut icon" href="./favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="../favicon/site.webmanifest" />
@@ -32,7 +32,7 @@
           <button popovertarget="menu" type="button">Menu</button>
           <ul class="menu" id="menu" popover>
             <li><a href="./">Forside</a></li>
-            <li><a href="./svg.html" aria-current="page">Interaktiv SVG</a></li>
+            <li><a href="./svg.html" aria-current="page">Program</a></li>
             <li><a href="./form.html">Formular</a></li>
           </ul>
         </nav>
@@ -58,25 +58,28 @@
           </div>
 
           <article class="panel">
-            <h2>Udforsk eventet</h2>
+            <h2 class="panel_h2">Udforsk eventet</h2>
             <div class="accordion">
               <!-- TODO: Lav om til details/summary -->
               <div class="accordion-item">
                 <details name="my-detail">
                   <summary id="vaelg-start">Start</summary>
-                  <p>Vi starter kl 17:00; hvor vi går en</p>
+                  <p>Kl. 17.00 begynder aftenen med en stemningsfuld gåtur gennem Københavns gader. Med stjernekastere i hånden bevæger vi os gennem byen og lader lyset, stemningen og fællesskabet sætte tonen for aftenen✨</p>
                 </details>
               </div>
               <div class="accordion-item">
                 <details name="my-detail">
                   <summary id="Vaelg-aktivitet">Aktiviteter</summary>
-                  <p>Her kan du lave lanterner og lys blabla</p>
+                  <p>
+                    Kom forbi vores hyggelige aktivitetsområde, hvor du kan gå på opdagelse i kreative DIY-workshops, lave din egen lanterne og skabe dit helt eget lys til aftenen. Samtidig kan du nyde lækker mad fra vores madboder og lade dig
+                    inspirere af den hyggelige stemning. ✨🕯️
+                  </p>
                 </details>
               </div>
               <div class="accordion-item">
                 <details name="my-detail">
                   <summary id="Vaelg-slut">Afslutning</summary>
-                  <p>Vi sætter lanterne i vandet og hører livemusik blabla</p>
+                  <p>Når mørket falder på, samles vi ved vandet for at sende vores hjemmelavede lanterner afsted og lade dem lyse vandet op. Aftenen rundes af med livemusik, hvor vi nyder tonerne, lyset og den særlige stemning sammen. ✨🕯️🎶</p>
                 </details>
               </div>
               <p id="besked"></p>
@@ -87,10 +90,61 @@
       <img class="mørk-fam" src="svg's/mørk_fam.svg" alt="Mørk fam" />
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-content">
-        <a class="site-logo" href="./"><img src="svg's/logo2.svg" alt="Lys i mørket" /> </a>
-        <p>Lys i mørket</p>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- ØVERSTE DEL AF FOOTEREN -->
+        <div class="footer-main">
+          <!-- KOLONNE 1 – EVENTETS NAVN OG BESKRIVELSE -->
+          <div class="footer-brand">
+            <h2 class="footer-logo"><b>Lys i mørket</b></h2>
+
+            <p>En stemningsfuld vinteraften i København fyldt med lys, fællesskab og hyggelige oplevelser.</p>
+
+            <a class="site-footer-logo" href="./"><img src="svg's/logo2.svg" alt="Lys i mørket" /> </a>
+          </div>
+
+          <!-- KOLONNE 2 – HURTIGE LINKS -->
+          <div class="footer-links">
+            <h3 class="footer-heading"><b>Udforsk</b></h3>
+
+            <ul>
+              <li><a href="index.html">Forside</a></li>
+              <li><a href="svg.html">Program</a></li>
+              <li><a href="form.html">Tilmelding</a></li>
+            </ul>
+          </div>
+
+          <!-- KOLONNE 3 – KONTAKT -->
+          <div class="footer-contact">
+            <h3 class="footer-heading"><b>Kontakt</b></h3>
+
+            <ul>
+              <li>
+                <a href="mailto:info@lysimorket.dk"> info@lysimorket.dk </a>
+              </li>
+              <li>København, Danmark</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- NEDERSTE DEL AF FOOTEREN -->
+        <div class="footer-bottom">
+          <!-- COPYRIGHT -->
+          <p class="footer-copyright">© 2026 Lys i mørket | Nanna, Emilie & Matilde</p>
+
+          <!-- SOCIALE MEDIER -->
+          <nav class="footer-social" aria-label="Sociale medier">
+            <ul>
+              <li>
+                <a href="#" aria-label="Instagram"> Instagram </a>
+              </li>
+
+              <li>
+                <a href="#" aria-label="Facebook"> Facebook </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </footer>
     <script src="./script.js"></script>
