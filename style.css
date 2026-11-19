@@ -131,7 +131,7 @@ html,
 body,
 * {
   cursor:
-    url("./pics/curser.svg") 8 8,
+    url("pics/curser.svg") 8 8,
     auto;
 }
 
@@ -277,15 +277,16 @@ main > * {
   color: var(--color-muted);
 }
 
-/* Header og footer */
-.site-header {
+/* Header og footer */ 
+.site-header,
+.site-footer {
   grid-column: 1 / -1;
 
   display: grid;
   grid-template-columns: inherit;
 }
 
-/* Header */
+/* Header */ 
 .site-header {
   background: #7c2da888;
   color: white;
