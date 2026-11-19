@@ -203,7 +203,7 @@ main > * {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: -10px;
+  gap: 10px;
   min-height: auto;
   border: none;
   padding: 1rem;
@@ -278,8 +278,7 @@ main > * {
 }
 
 /* Header og footer */
-.site-header,
-.site-footer {
+.site-header {
   grid-column: 1 / -1;
 
   display: grid;
@@ -288,16 +287,16 @@ main > * {
 
 /* Header */
 .site-header {
-  background: #71468b98;
+  background: #7c2da888;
   color: white;
 }
 
 /* Footer */
-.site-footer {
+/* .site-footer {
   grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
-  background: #25264a98;
+  background: #ff521398;
   color: white;
 }
 .site-footer p {
@@ -305,7 +304,7 @@ main > * {
   margin-top: 30px;
   font-size: 18px;
   font-weight: bold;
-}
+} */
 .header-content,
 .footer-content {
   grid-column: 2;
@@ -336,7 +335,7 @@ main > * {
   scale: 3;
 }
 
-.footer-content {
+/* .footer-content {
   grid-column: 2;
   padding-block: var(--space-1);
   display: flex;
@@ -344,7 +343,7 @@ main > * {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-1);
-}
+} */
 
 /* Navigation */
 [popover] {
@@ -375,11 +374,11 @@ main > * {
   padding: var(--space-1);
   list-style: none;
   background: #341e6cea;
-  border: 1px solid var (--color-border);
+  border: 1px solid white;
   @media (width > 600px) {
     display: flex;
     gap: var(--space-1);
-    padding: 0;
+    padding: 0px;
     border: none;
     background: none;
     position: static;
@@ -407,8 +406,12 @@ main > * {
 /* Flader */
 .panel,
 .opsamling-placeholder {
-  background: rgba(255, 197, 132, 0.479);
+  background: rgb(252, 200, 136);
   border-radius: 18px;
+  color: #080f2b;
+}
+.panel_h2 {
+  color: #080f2b;
 }
 
 /*form styling*/
@@ -802,6 +805,7 @@ legend {
 
 .svg-placeholder {
   background: #010124;
+  border: solid 2px #1a1aa7;
   border-radius: 18px;
 }
 .panel {
@@ -829,7 +833,7 @@ legend {
 }
 
 .accordion-item {
-  background: rgba(237, 164, 81, 0.24);
+  background: rgba(237, 164, 81, 0.675);
   border-radius: 10px;
   transition: transform 0.3s ease;
   padding: 1rem;
@@ -839,10 +843,22 @@ legend {
     cursor: pointer;
   }
 }
+::details-content {
+  height: 0;
+  /* Skjul indhold, der rager ud, og tilføj overgangen her. */
+  transition-behavior: allow-discrete;
+  transition: 0.5s;
+  overflow: clip;
+}
+:open::details-content {
+  /* Dette er indholdets højde, når sektionen er åben. */
+  height: auto;
+}
 
 .accordion-item p {
   padding: 0 var(--space-1) var(--space-1);
   color: black;
+  animation: accordion-open 0.4s ease;
 }
 
 /* Knap/link */
@@ -873,7 +889,6 @@ legend {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: top;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   transition:
     transform 0.3s ease,
@@ -1059,8 +1074,8 @@ legend {
 main > .lys-fam2,
 main > .mørk-fam {
   padding-block: 0;
-  margin-top: -100px;
-  margin-bottom: -40px;
+  margin-top: -40px;
+  margin-bottom: 1px;
 }
 a {
   color: white;
@@ -1100,7 +1115,6 @@ p.intro-tekst {
   color: rgba(255, 255, 255, 0.822);
   font-size: 14px;
   line-height: 1.6;
-  transition: transform 0.4 ease;
 }
 .stjerne-lanterne {
   width: 120px;
@@ -1250,3 +1264,158 @@ p.intro-tekst {
   border-radius: 20px;
   border-color: solid red;
 } */
+.stjerne {
+  transform-box: view-box;
+  translate: 0% 0%;
+  transition: translate 0.7s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stjerne {
+    transition: none;
+  }
+}
+.copyright {
+  color: red;
+}
+/*FOOTER CSS*/
+
+/*HELE FOOTERENS STYLING */
+.footer {
+  width: 100%;
+  box-sizing: border-box;
+  grid-column: 1 / -1;
+  flex: 0 0 100%;
+
+  background-color: #ff521398;
+  color: #f2ede4;
+  padding: 50px 25px 25px;
+}
+
+/* Begrænser bredden på footerens indhold */
+.footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/*ØVERSTE DEL AF FOOTEREN*/
+/* Opdeling i tre kolonner */
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #5a0a6e;
+}
+
+/*KOLONNE 1 – EVENTETS NAVN OG BESKRIVELSE*/
+/* Eventets navn */
+.footer-logo {
+  /* font-family: "Marcellus", serif; */
+  font-size: 28px;
+  font-weight: normal;
+  margin: 0 0 15px;
+  color: #f2ede4;
+}
+
+/* Selve logoet */
+.site-footer-logo {
+  display: block;
+  margin-top: 15px;
+  margin-left: -73px; /* Flytter logoet mod venstre */
+}
+
+.site-footer-logo img {
+  width: 200px;
+  height: auto;
+  margin-top: 15px;
+}
+
+/* Beskrivelsen under eventets navn */
+.footer-brand p {
+  max-width: 350px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/*KOLONNE 2 OG 3 – OVERSKRIFTER OG LINKS*/
+/* Overskrifterne Udforsk og Kontakt */
+.footer-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5a0a6e;
+  margin: 0 0 15px;
+}
+
+/* Fjerner standard styling på lister */
+.footer-links ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Afstand mellem links og kontaktoplysninger */
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Fælles styling af links i footeren */
+.footer a {
+  color: #f2ede4;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Farve ved hover */
+.footer a:hover {
+  color: #d6a45d;
+}
+
+/*NEDERSTE DEL AF FOOTEREN*/
+/* Copyright og sociale medier */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+/* Copyright tekst */
+.footer-copyright {
+  font-size: 13px;
+  margin: 0;
+}
+
+/*SOCIALE MEDIER*/
+/* Placering af sociale medier */
+.footer-social ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Størrelse på sociale mediers tekst */
+.footer-social a {
+  font-size: 13px;
+}
+
+/*RESPONSIV – MOBIL*/
+@media (max-width: 767px) {
+  /* Kolonnerne placeres under hinanden */
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  /* Copyright og sociale medier centreres */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
