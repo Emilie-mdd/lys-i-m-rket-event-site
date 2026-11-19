@@ -839,6 +839,17 @@ legend {
     cursor: pointer;
   }
 }
+::details-content {
+  height: 0;
+  /* Skjul indhold, der rager ud, og tilføj overgangen her. */
+  transition-behavior: allow-discrete;
+  transition: 0.5s;
+  overflow: clip;
+}
+:open::details-content {
+  /* Dette er indholdets højde, når sektionen er åben. */
+  height: auto;
+}
 
 .accordion-item p {
   padding: 0 var(--space-1) var(--space-1);
