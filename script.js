@@ -50,3 +50,39 @@ if (kildeSelect && andetKilde) {
     }
   });
 }
+
+//opsamlingsside
+// Hent oplysninger fra formularen
+const params = new URLSearchParams(window.location.search);
+
+// Find billetten
+const billet = document.querySelector("#billet");
+
+if (billet) {
+  // Vis brugerens oplysninger
+  document.querySelector("#vis-navn").textContent = params.get("navn") || "";
+
+  document.querySelector("#vis-deltagere").textContent = params.get("deltagere") || "";
+
+  // Oversæt dekorationerne
+  const dekorationer = params.getAll("dekoration");
+
+  //denne del bestemmer hvad der står under "Kreative aktiviteter" når formularen er udfyldt
+  const dekorationNavne = {
+    "eget-glas": "Dekorere eget glas",
+    "genbrugt-glas": "Dekorere et glas fra eventet",
+    lanterne: "Dekorere en vandlanterne",
+    ingen: "Ingen kreative aktiviteter",
+  };
+
+  document.querySelector("#vis-dekoration").textContent = dekorationer.map((valg) => dekorationNavne[valg] || valg).join(", ") || "Ingen valgt";
+
+  // Skift billetdesign
+  const stemning = params.get("stemning");
+
+  if (stemning === "varmt-lys") {
+    billet.classList.add("solnedgang");
+  } else if (stemning === "stjernelys") {
+    billet.classList.add("stjernelys");
+  }
+}

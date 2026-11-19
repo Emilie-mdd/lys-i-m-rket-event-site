@@ -24,14 +24,114 @@ body {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   grid-template-columns: minmax(1rem, 1fr) minmax(0, 75rem) minmax(1rem, 1fr);
-  background: linear-gradient(to left, #080f2b 0%, #25264a 38%, #a93e45 68%, #ff4b35 85%, #ff984a 100%);
+
+  /* Nannas: background: 
+  linear-gradient(
+  to left, 
+  #080f2b 0%, 
+  #25264a 38%, 
+  #a93e45 68%, 
+  #ff4b35 85%, 
+  #ff984a 100%); */
+  background: linear-gradient(to top, #ff984a 0%, #ff4b35 12%, #a93e45 27%, #25264a 45%, #080f2b 65%, transparent 80%), radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
+
+  position: relative;
+  isolation: isolate;
 }
 
+/* Stjernehimmel i baggrund*/
+.stars {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  box-shadow:
+    45px 85px rgba(255, 255, 255, 0.7),
+    125px 35px rgba(255, 255, 255, 0.5),
+    190px 165px rgba(255, 255, 255, 0.8),
+    275px 105px rgba(255, 255, 255, 0.6),
+    350px 210px rgba(255, 255, 255, 0.7),
+    430px 65px rgba(255, 255, 255, 0.5),
+    510px 155px rgba(255, 255, 255, 0.8),
+    590px 90px rgba(255, 255, 255, 0.6),
+    670px 240px rgba(255, 255, 255, 0.7),
+    755px 115px rgba(255, 255, 255, 0.5),
+    840px 195px rgba(255, 255, 255, 0.8),
+    930px 65px rgba(255, 255, 255, 0.6),
+    1020px 175px rgba(255, 255, 255, 0.7),
+    1120px 100px rgba(255, 255, 255, 0.5),
+    1210px 230px rgba(255, 255, 255, 0.8),
+    80px 290px rgba(255, 255, 255, 0.6),
+    220px 350px rgba(255, 255, 255, 0.7),
+    390px 310px rgba(255, 255, 255, 0.5),
+    550px 390px rgba(255, 255, 255, 0.8),
+    720px 330px rgba(255, 255, 255, 0.6),
+    880px 420px rgba(255, 255, 255, 0.7),
+    1060px 350px rgba(255, 255, 255, 0.5),
+    1190px 440px rgba(255, 255, 255, 0.8),
+    1300px 140px rgba(255, 255, 255, 0.6),
+    1400px 280px rgba(255, 255, 255, 0.7),
+    1500px 120px rgba(255, 255, 255, 0.5),
+    1350px 430px rgba(255, 255, 255, 0.8),
+    1550px 380px rgba(255, 255, 255, 0.6);
+
+  animation: twinkle 4s infinite ease-in-out alternate;
+}
+
+/* Firetakkede stjerner */
+.stars::before {
+  content: "✦";
+  position: fixed;
+  top: 8%;
+  left: 15%;
+  color: #fff1b0;
+  font-size: 11px;
+  text-shadow:
+    145px 125px 0 rgba(255, 255, 255, 0.8),
+    330px -35px 0 rgba(255, 241, 176, 0.7),
+    510px 210px 0 rgba(255, 255, 255, 0.8),
+    690px 75px 0 rgba(255, 241, 176, 0.6),
+    850px 260px 0 rgba(255, 255, 255, 0.7),
+    1030px 110px 0 rgba(255, 241, 176, 0.8),
+    1150px 320px 0 rgba(255, 255, 255, 0.7),
+    1280px 90px 0 rgba(255, 255, 255, 0.7),
+    1380px 190px 0 rgba(255, 241, 176, 0.8),
+    1480px 55px 0 rgba(255, 255, 255, 0.6),
+    1320px 310px 0 rgba(255, 255, 255, 0.8),
+    1450px 410px 0 rgba(255, 241, 176, 0.6),
+    1550px 250px 0 rgba(255, 255, 255, 0.7);
+
+  animation: twinkle 3.5s infinite ease-in-out alternate;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+/* Sørger for at sidens indhold ligger over stjernerne */
+body > *:not(.stars) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bruger en stjerne som musemarkør på hele websitet */
 html,
 body,
 * {
   cursor:
-    url("pics/curser.svg") 8 8,
+    url("./pics/curser.svg") 8 8,
     auto;
 }
 
@@ -164,7 +264,7 @@ main > * {
 }
 
 .opsamling-intro p {
-  color: var(--color-muted);
+  color: white;
 }
 
 .error-page {
@@ -328,6 +428,8 @@ main > * {
   line-height: 1.6;
 }
 
+/*FORMULARSIDEN*/
+
 /* Formularboksen: */
 .form-placeholder {
   display: grid;
@@ -339,7 +441,6 @@ main > * {
   box-sizing: border-box;
 }
 
-/*------------*/
 /* Formularens felter */
 .form-placeholder > div {
   display: grid;
@@ -499,6 +600,199 @@ main > * {
   }
 }
 
+/*OPSAMLINGSSIDEN*/
+/* 1. TILBAGE-KNAP */
+.opsamling-intro .button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: rgba(255, 241, 176, 0.12);
+  border: 1px solid #e9bd70;
+  color: #fff1b0;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover-effekt på tilbage-knappen */
+.opsamling-intro .button:hover {
+  background: #e9bd70;
+  color: #080f2b;
+  transform: translateY(-2px);
+}
+
+/* 2. FÆLLES STYLING AF BILLETTERNE */
+.opsamling-placeholder {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 55px 45px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff8e9;
+}
+
+/* Indholdet placeres over dekorationerne */
+.billet-indhold {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+/*Informationsboks på begge variationer*/
+.billet-detaljer p {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+/* Lille tekst øverst på billetten "LYS I MØRKET" */
+.billet-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/* Overskrift "Din personlige billet!" */
+.billet-indhold h2 {
+  font-size: 36px;
+}
+
+/* Beskrivende tekst "Vi glæder os til at lyse vintermørket op sammen med dig."*/
+.billet-tekst {
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+/* Afsluttende tekst "Vi ses i vintermørket ✨" */
+.billet-afslutning {
+  margin-bottom: 40px;
+  margin-top: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Logoet på billetten*/
+.ticket-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ticket-logo img {
+  width: 240px;
+  height: auto;
+  max-width: none;
+  display: block;
+}
+
+/* 3. FÆLLES STJERNEDEKORATIONER I BAGGRUNDEN */
+/* Store stjerner */
+.opsamling-placeholder::before {
+  content: "✦";
+  position: absolute;
+  top: 35px;
+  right: 75px;
+  font-size: 22px;
+  color: #fff1b0;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+
+  /* Flere stjerner placeres med skygger */
+  text-shadow:
+    -400px 70px 0 rgba(255, 241, 176, 0.8),
+    -300px 230px 0 rgba(255, 255, 255, 0.7),
+    -80px 320px 0 rgba(255, 241, 176, 0.8),
+    15px 180px 0 rgba(255, 255, 255, 0.7),
+    -220px -5px 0 rgba(255, 241, 176, 0.7),
+    -350px 450px 0 rgba(255, 255, 255, 0.8),
+    -100px 480px 0 rgba(255, 241, 176, 0.8),
+    200px 430px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Små lysprikker i baggrunden */
+.opsamling-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background-image: radial-gradient(circle, #fff1b0 1.5px, transparent 2px), radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1.5px), radial-gradient(circle, #ffd477 2px, transparent 2.5px);
+
+  background-size:
+    110px 130px,
+    160px 145px,
+    210px 190px;
+
+  background-position:
+    20px 15px,
+    70px 60px,
+    130px 25px;
+
+  opacity: 0.45;
+}
+
+/* 4. VARIATION 1: SOLNEDGANGSMAGI */
+/* Baggrund med varme solnedgangsfarver */
+.opsamling-placeholder.solnedgang {
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 230, 158, 0.85) 0%, rgba(255, 183, 105, 0.35) 30%, transparent 60%), linear-gradient(180deg, #ffbd72 0%, #ff965c 28%, #f66b50 58%, #d94e4b 80%, #963e50 100%);
+
+  border-color: rgba(255, 241, 176, 0.5);
+}
+
+/* Informationsboks */
+.solnedgang .billet-detaljer {
+  background: rgba(139, 48, 58, 0.55);
+  border: 1px solid rgba(255, 241, 176, 0.45);
+  box-shadow: 0 5px 20px rgba(111, 38, 48, 0.15);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+/* Farver på tekst i solnedgangsbilletten */
+.solnedgang .billet-label,
+.solnedgang .billet-afslutning {
+  color: #542b25;
+}
+
+.solnedgang .billet-indhold h2 {
+  color: #4a1834;
+}
+
+/* 5. VARIATION 2: STJERNELYS */
+/* Mørk nattehimmel */
+.opsamling-placeholder.stjernelys {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(233, 189, 112, 0.18), transparent 28%), radial-gradient(circle at 85% 80%, rgba(105, 91, 145, 0.3), transparent 35%), radial-gradient(circle at 70% 15%, rgba(255, 241, 176, 0.12), transparent 22%),
+    linear-gradient(145deg, #080f2b 0%, #151b3d 45%, #302d57 100%);
+
+  border-color: rgba(233, 189, 112, 0.4);
+}
+
+/* Informationsboks */
+.stjernelys .billet-detaljer {
+  background: rgba(5, 12, 38, 0.75);
+  border: 1px solid rgba(233, 189, 112, 0.4);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+/* Farver på tekst i nattebilletten */
+.stjernelys .billet-label,
+.billet-afslutning {
+  color: #e9bd70;
+}
+
+.stjernelys .billet-indhold h2 {
+  color: #fff1c9;
+}
 /*---------------------*/
 
 legend {
