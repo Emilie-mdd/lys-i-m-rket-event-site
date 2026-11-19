@@ -1,50 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opsamling | Eventnavn</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opsamling | Eventnavn</title>
-  <link rel="stylesheet" href="./starter.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <header class="site-header">
-    <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
-      <nav class="site-nav">
-        <button>Menu</button>
-        <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html" aria-current="page">Formular</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="opsamling-page">
-      <div class="opsamling-intro">
-        <h1>Opsamling</h1>
-        <p>Vis brugerens valg som et pass, en invitation eller noget andet, der passer til dit event.</p>
-        <div class="actions">
-          <a class="button" href="./form.html">Tilbage til formular</a>
-        </div>
+  <body>
+    <!-- NYT stjernehimmel -->
+    <div class="stars"></div>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="site-logo" href="./">Eventnavn</a>
+        <nav class="site-nav">
+          <button popovertarget="menu" type="button">Menu</button>
+          <ul class="menu" id="menu" popover>
+            <li><a href="./">Forside</a></li>
+            <li><a href="./svg.html">Interaktiv SVG</a></li>
+            <li><a href="./form.html" aria-current="page">Formular</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <article class="opsamling-placeholder"></article>
-    </section>
-  </main>
+    <main>
+      <section class="opsamling-page">
+        <div class="opsamling-intro">
+          <h1>Du er tilmeldt!</h1>
+          <p>Din tilmelding er gennemført! Her finder du din billet.</p>
+          <div class="actions">
+            <a class="button" href="./form.html">Tilbage til formular</a>
+          </div>
+        </div>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
-    </div>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+        <article class="opsamling-placeholder" id="billet">
+          <div class="billet-indhold">
+            <p class="billet-label">LYS I MØRKET</p>
+            <h2>Din personlige billet!</h2>
+            <p class="billet-tekst">Vi glæder os til at lyse vintermørket op sammen med dig.</p>
 
+            <div class="billet-detaljer">
+              <p><strong>Navn:</strong> <span id="vis-navn"></span></p>
+              <p><strong>Antal deltagere:</strong> <span id="vis-deltagere"></span></p>
+              <p><strong>Kreative aktiviteter:</strong> <span id="vis-dekoration"></span></p>
+            </div>
+
+            <p class="billet-afslutning">Vi ses i vintermørket ✨</p>
+            <div class="ticket-logo">
+              <img src="../svg's/logo2.svg" alt="Lys i mørket" />
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>Eventnavn</p>
+        <p>Footer</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
