@@ -203,7 +203,7 @@ main > * {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: -10px;
+  gap: 10px;
   min-height: auto;
   border: none;
   padding: 1rem;
@@ -288,7 +288,7 @@ main > * {
 
 /* Header */
 .site-header {
-  background: #71468b98;
+  background: #6f47ff88;
   color: white;
 }
 
@@ -375,11 +375,11 @@ main > * {
   padding: var(--space-1);
   list-style: none;
   background: #341e6cea;
-  border: 1px solid var (--color-border);
+  border: 1px solid white;
   @media (width > 600px) {
     display: flex;
     gap: var(--space-1);
-    padding: 0;
+    padding: 0px;
     border: none;
     background: none;
     position: static;
@@ -873,7 +873,6 @@ legend {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: top;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   transition:
     transform 0.3s ease,
@@ -1100,7 +1099,6 @@ p.intro-tekst {
   color: rgba(255, 255, 255, 0.822);
   font-size: 14px;
   line-height: 1.6;
-  transition: transform 0.4 ease;
 }
 .stjerne-lanterne {
   width: 120px;
