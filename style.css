@@ -1034,7 +1034,7 @@ legend {
 
   &:hover {
     transform: scale(1.15);
-    content: url("svg's/mørk fam.svg");
+    content: url("svg's/mørk_fam.svg");
   }
 }
 @media (max-width: 800px) {
@@ -1052,7 +1052,7 @@ legend {
 
   &:hover {
     transform: scale(1.15);
-    content: url("svg's/lys fam2.svg");
+    content: url("svg's/lys_fam2.svg");
   }
 }
 main > .lys-fam2,
